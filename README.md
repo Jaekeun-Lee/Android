@@ -11,5 +11,5 @@
  
  
 ## 2. Presentation
-![](img/슬라이드01.jpg)
+![](img/슬라이드01.JPG)
 
