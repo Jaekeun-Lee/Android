@@ -3,7 +3,7 @@
 :octocat: STAPLE ( See, Take A Picture, Learn ) !
    
    
-## AI를 활용한 물체인식 영어공부   <br/>( English study using A.I to use object detection )   
+## AI를 활용한 물체인식 영어공부   <br/>### English study using A.I to use object detection   
    
    
 ## 1. Introduction   
