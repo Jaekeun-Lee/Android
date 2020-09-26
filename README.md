@@ -1,5 +1,5 @@
 # Android Project
-[![BLOG](https://github.com/chlgkrws/Capstone_Design_2020)]
+[CapstoneDesign2020](https://github.com/chlgkrws/Capstone_Design_2020)]
 :octocat: STAPLE ( See, Take A Picture, Learn ) !
    
    
