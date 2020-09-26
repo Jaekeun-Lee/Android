@@ -1,6 +1,6 @@
 # Android Project
 [CapstoneDesign2020](https://github.com/chlgkrws/Capstone_Design_2020)
-:octocat: STAPLE ( See, Take A Picture, Learn ) !
+:octocat: STAPL ( See, Take A Picture, Learn ) !
    
    
 ## AI를 활용한 물체인식 영어공부   <br/> - English study using A.I to use object detection   
