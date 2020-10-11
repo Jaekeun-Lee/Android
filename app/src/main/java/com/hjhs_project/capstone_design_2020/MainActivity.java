@@ -83,10 +83,40 @@ public class MainActivity extends AppCompatActivity {
                 String tos2 = "";
 
                 try {
-                    doc = Jsoup.connect("https://appexam.ybmnet.co.kr/toeicswt/receipt/schedule.asp").get();
-                    Elements info = doc.select("div.exam_ing_table tbody tr td");
+                    doc = Jsoup.connect("https://www.toeicswt.co.kr/receipt/examSchList.php").get();
+                    Elements info = doc.select("div.table_data tbody tr");
 
-                    for(int i = 0; i < 3; i++){
+                    //Toast.makeText(getApplicationContext(),info.text(),Toast.LENGTH_LONG).show();
+                    System.out.println(info.get(0).text());
+                    tos1 = info.get(0).text();
+                    tos2 = info.get(1).text();
+                    //첫 번째 시험 정보
+
+                    int check = 0;
+
+                    for(int i = 0; i < tos1.length(); i++){
+                        if(tos1.charAt(i) == ')'){
+                            tos1 = tos1.substring(0, i+1) +","+tos1.substring(i+1);
+                            check++;
+                        }
+                        if(check == 2){
+                            break;
+                        }
+                    }
+
+                    check = 0;
+                    for(int i = 0; i < tos2.length(); i++){
+                        if(tos2.charAt(i) == ')'){
+                            tos2 = tos2.substring(0, i+1) +","+tos2.substring(i+1);
+                            check++;
+                        }
+                        if(check == 2){
+                            break;
+                        }
+                    }
+                    System.out.println(tos1 +" asd "+ tos2);
+
+                    /*for(int i = 0; i < 3; i++){
                         if(i == 0){
                             tos1 += info.get(i).text().replaceAll(" ",".").replace("년","").replaceFirst("월","").replaceFirst("일","")+",";
                             tos2 += info.get(i+3).text().replaceAll(" ",".").replace("년","").replaceFirst("월","").replaceFirst("일","")+",";
@@ -111,12 +141,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                    }
+                    }*/
 
                     Bundle bundle = new Bundle();
                     bundle.putString("tos1",tos1);
                     bundle.putString("tos2",tos2);
-                    Thread.sleep(3000);                                                 //스플래쉬 표시시간
+                    Thread.sleep(300);                                                 //스플래쉬 표시시간
                     Message msg = tosHandler.obtainMessage();
                     msg.setData(bundle);
                     tosHandler.sendMessage(msg);
